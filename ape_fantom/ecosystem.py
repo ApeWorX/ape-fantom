@@ -11,6 +11,7 @@ from ape.api import (
     TransactionStatusEnum,
     TransactionType,
 )
+from ape.api.networks import LOCAL_NETWORK_NAME
 from ape.contracts import ContractLog
 from ape.exceptions import DecodingError, OutOfGasError, SignatureError, TransactionError
 from ape.types import AddressType
@@ -43,8 +44,8 @@ class NetworkConfig(ConfigItem):
 class FantomConfig(ConfigItem):
     opera: NetworkConfig = NetworkConfig(required_confirmations=1, block_time=1)  # type: ignore
     testnet: NetworkConfig = NetworkConfig(required_confirmations=1, block_time=1)  # type: ignore
-    development: NetworkConfig = NetworkConfig(default_provider="fantom")  # type: ignore
-    default_network: str = "development"
+    local: NetworkConfig = NetworkConfig(default_provider="test")  # type: ignore
+    default_network: str = LOCAL_NETWORK_NAME
 
 
 class BaseTransaction(TransactionAPI):
@@ -108,7 +109,7 @@ class StaticFeeTransaction(BaseTransaction):
         return (self.gas_limit or 0) * (self.gas_price or 0)
 
     @max_fee.setter
-    def max_fee(self, valie):
+    def max_fee(self, value):
         raise NotImplementedError("Max fee is not settable for static-fee transactions.")
 
     def as_dict(self):
