@@ -1,12 +1,28 @@
 # Ape Fantom Ecosystem Plugin
 
-TODO: Description
+Ecosystem Plugin for Fantom support in Ape
 
 ## Dependencies
 
 * [python3](https://www.python.org/downloads) version 3.7 or greater, python3-dev
 
 ## Installation
+
+### via `ape`
+
+You can install this plugin using `ape`:
+
+```bash
+ape plugins install fantom
+```
+
+or via config file:
+
+```yaml
+# ape-config.yaml
+plugins:
+  - name: fantom
+```
 
 ### via `pip`
 
@@ -28,12 +44,14 @@ python3 setup.py install
 
 ## Quick Usage
 
-TODO: Describe library overview in code
+Installing this plugin adds support for the Fantom ecosystem:
+
+```bash
+ape console --network fantom:opera
+```
 
 ## Development
 
-This project is in development and should be considered a beta.
-Things might not be in their final state and breaking changes may occur.
 Comments, questions, criticisms and pull requests are welcomed.
 
 ## License
