@@ -54,9 +54,9 @@ setup(
     include_package_data=True,
     install_requires=[
         "importlib-metadata ; python_version<'3.8'",
-        "eth-ape>=0.1.0b5",
+        "eth-ape>=0.1,<0.2",
     ],  # NOTE: Add 3rd party libraries here
-    python_requires=">=3.7,<4",
+    python_requires=">=3.7.2,<3.11",
     extras_require=extras_require,
     py_modules=["ape_fantom"],
     license="Apache-2.0",
@@ -65,7 +65,7 @@ setup(
     packages=find_packages(exclude=["tests", "tests.*"]),
     package_data={"ape_fantom": ["py.typed"]},
     classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: Apache Software License",
         "Natural Language :: English",
@@ -75,5 +75,6 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
     ],
 )
