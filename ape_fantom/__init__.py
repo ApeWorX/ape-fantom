@@ -22,11 +22,9 @@ def networks():
     for network_name, network_params in NETWORKS.items():
         yield "fantom", network_name, create_network_type(*network_params)
 
-    # These use the same values from their parent networks
-    yield "fantom", "opera-fork", create_network_type(*NETWORKS["opera"])
-
     # NOTE: This works for development providers, as they get chain_id from themselves
     yield "fantom", LOCAL_NETWORK_NAME, NetworkAPI
+    yield "fantom", "opera-fork", NetworkAPI
 
 
 @plugins.register(plugins.ProviderPlugin)
