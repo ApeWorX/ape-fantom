@@ -55,7 +55,7 @@ setup(
     install_requires=[
         "importlib-metadata ; python_version<'3.8'",
         "eth-ape>=0.3.0,<0.4.0",
-    ],  # NOTE: Add 3rd party libraries here
+    ],
     python_requires=">=3.7.2,<3.11",
     extras_require=extras_require,
     py_modules=["ape_fantom"],
