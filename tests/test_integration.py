@@ -28,7 +28,7 @@ def assert_rich_text(actual: str, expected: str):
             new_lines.append(line.rstrip())
 
     actual = "\n".join(new_lines)
-    print(actual)
+
     assert actual == expected
 
 
