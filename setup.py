@@ -53,7 +53,7 @@ setup(
     url="https://github.com/ApeWorX/ape-fantom",
     include_package_data=True,
     install_requires=[
-        "eth-ape>=0.5.0,<0.6.0",
+        "eth-ape>=0.5.0,<0.6",
     ],
     python_requires=">=3.8,<4",
     extras_require=extras_require,

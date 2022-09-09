@@ -49,7 +49,3 @@ Installing this plugin adds support for the Fantom ecosystem:
 ```bash
 ape console --network fantom:opera
 ```
-
-## Development
-
-Comments, questions, criticisms and pull requests are welcomed.

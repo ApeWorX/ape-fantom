@@ -4,8 +4,10 @@ fantom
 │   └── geth  (default)
 ├── testnet
 │   └── geth  (default)
-└── local  (default)
-    └── test  (default)
+├── local  (default)
+│   └── test  (default)
+└── opera-fork
+    └── tenderly  (default)
 """.strip()
 
 
@@ -26,6 +28,7 @@ def assert_rich_text(actual: str, expected: str):
             new_lines.append(line.rstrip())
 
     actual = "\n".join(new_lines)
+    print(actual)
     assert actual == expected
 
 
