@@ -1,10 +1,10 @@
-# Ape Fantom Ecosystem Plugin
+# Quick Start
 
 Ecosystem Plugin for Fantom support in Ape
 
 ## Dependencies
 
-* [python3](https://www.python.org/downloads) version 3.7.2 or greater, python3-dev
+* [python3](https://www.python.org/downloads) version 3.8 or greater, python3-dev
 
 ## Installation
 
@@ -49,11 +49,3 @@ Installing this plugin adds support for the Fantom ecosystem:
 ```bash
 ape console --network fantom:opera
 ```
-
-## Development
-
-Comments, questions, criticisms and pull requests are welcomed.
-
-## License
-
-This project is licensed under the [Apache 2.0](LICENSE).
