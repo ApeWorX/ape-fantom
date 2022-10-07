@@ -31,7 +31,7 @@ class FantomConfig(PluginConfig):
     opera_fork: NetworkConfig = _create_local_config()
     testnet: NetworkConfig = _create_network_config()
     testnet_fork: NetworkConfig = _create_local_config()
-    local: NetworkConfig = _create_local_config(default_provider="test")  # type: ignore
+    local: NetworkConfig = _create_local_config(default_provider="test")
     default_network: str = LOCAL_NETWORK_NAME
 
 
