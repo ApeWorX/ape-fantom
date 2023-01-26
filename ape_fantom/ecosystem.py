@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, cast
 
 from ape.api.config import PluginConfig
 from ape.api.networks import LOCAL_NETWORK_NAME
@@ -14,10 +14,9 @@ NETWORKS = {
 def _create_network_config(
     required_confirmations: int = 1, block_time: int = 1, **kwargs
 ) -> NetworkConfig:
-    # Helper method to isolate `type: ignore` comments.
     return NetworkConfig(
         required_confirmations=required_confirmations, block_time=block_time, **kwargs
-    )  # type: ignore
+    )
 
 
 def _create_local_config(default_provider: Optional[str] = None) -> NetworkConfig:
@@ -37,5 +36,5 @@ class FantomConfig(PluginConfig):
 
 class Fantom(Ethereum):
     @property
-    def config(self) -> FantomConfig:  # type: ignore
-        return self.config_manager.get_config("fantom")  # type: ignore
+    def config(self) -> FantomConfig:  # type: ignore[override]
+        return cast(FantomConfig, self.config_manager.get_config("fantom"))
