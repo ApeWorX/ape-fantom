@@ -22,3 +22,17 @@ def runner():
 @pytest.fixture
 def cli():
     return ape_cli
+
+
+@pytest.fixture
+def fantom(networks):
+    return networks.fantom
+
+
+@pytest.fixture
+def eth_tester_provider():
+    if not ape.networks.active_provider or ape.networks.provider.name != "test":
+        with ape.networks.fantom.local.use_provider("test") as provider:
+            yield provider
+    else:
+        yield ape.networks.provider
