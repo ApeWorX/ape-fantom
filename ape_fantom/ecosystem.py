@@ -36,5 +36,5 @@ class FantomConfig(PluginConfig):
 
 class Fantom(Ethereum):
     @property
-    def config(self) -> FantomConfig:  # type: ignore[override]
+    def config(self) -> FantomConfig:
         return cast(FantomConfig, self.config_manager.get_config("fantom"))
