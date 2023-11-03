@@ -1,9 +1,9 @@
-from typing import Optional, cast, Type
+from typing import Optional, Type, cast
 
 from ape.api.config import PluginConfig
 from ape.api.networks import LOCAL_NETWORK_NAME
 from ape.utils import DEFAULT_LOCAL_TRANSACTION_ACCEPTANCE_TIMEOUT
-from ape_ethereum.ecosystem import Ethereum, NetworkConfig, ForkedNetworkConfig
+from ape_ethereum.ecosystem import Ethereum, ForkedNetworkConfig, NetworkConfig
 
 NETWORKS = {
     # chain_id, network_id
@@ -18,9 +18,7 @@ def _create_config(
     return cls(required_confirmations=required_confirmations, block_time=block_time, **kwargs)
 
 
-def _create_local_config(
-    default_provider: Optional[str] = None, use_fork: bool = False, **kwargs
-) -> NetworkConfig:
+def _create_local_config(default_provider: Optional[str] = None, use_fork: bool = False, **kwargs):
     return _create_config(
         block_time=0,
         default_provider=default_provider,
