@@ -23,7 +23,7 @@ def test_create_transaction(fantom, tx_type, eth_tester_provider):
     ),
 )
 def test_encode_transaction(tx_type, fantom, eth_tester_provider):
-    abi = MethodABI.parse_obj(
+    abi = MethodABI.model_validate(
         {
             "type": "function",
             "name": "fooAndBar",
