@@ -8,18 +8,18 @@ def test_gas_limit(fantom):
 
 
 def test_default_transaction_type(fantom):
-    assert fantom.config.mainnet.default_transaction_type == TransactionType.STATIC
+    assert fantom.config.opera.default_transaction_type == TransactionType.DYNAMIC
 
 
-def test_mainnet_fork_not_configured():
+def test_opera_fork_not_configured():
     obj = FantomConfig.model_validate({})
-    assert obj.mainnet_fork.required_confirmations == 0
+    assert obj.opera_fork.required_confirmations == 0
 
 
-def test_mainnet_fork_configured():
-    data = {"mainnet_fork": {"required_confirmations": 555}}
+def test_opera_fork_configured():
+    data = {"opera_fork": {"required_confirmations": 555}}
     obj = FantomConfig.model_validate(data)
-    assert obj.mainnet_fork.required_confirmations == 555
+    assert obj.opera_fork.required_confirmations == 555
 
 
 def test_custom_network():
