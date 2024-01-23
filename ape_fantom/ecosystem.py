@@ -16,6 +16,8 @@ class FantomConfig(PluginConfig):
 
 
 class Fantom(Ethereum):
+    fee_token_symbol: str = "FTM"
+
     @property
     def config(self) -> FantomConfig:  # type: ignore[override]
         return cast(FantomConfig, self.config_manager.get_config("fantom"))
