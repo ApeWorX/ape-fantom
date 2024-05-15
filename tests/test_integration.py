@@ -4,12 +4,12 @@ from click.testing import CliRunner
 
 EXPECTED_OUTPUT = """
 fantom
+├── local  (default)
+│   └── test  (default)
 ├── opera
-│   └── geth  (default)
-├── testnet
-│   └── geth  (default)
-└── local  (default)
-    └── test  (default)
+│   └── node  (default)
+└── testnet
+    └── node  (default)
 """.strip()
 
 
@@ -45,8 +45,8 @@ def assert_rich_text(actual: str, expected: str):
 
 
 def test_networks(runner, cli, fantom):
-    fantom.opera.set_default_provider("geth")
-    fantom.testnet.set_default_provider("geth")
+    fantom.opera.set_default_provider("node")
+    fantom.testnet.set_default_provider("node")
 
-    result = runner.invoke(cli, ["networks", "list"])
+    result = runner.invoke(cli, ("networks", "list"))
     assert_rich_text(result.output, EXPECTED_OUTPUT)
