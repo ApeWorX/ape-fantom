@@ -1,4 +1,4 @@
-from typing import ClassVar, Dict, Tuple, cast
+from typing import ClassVar, cast
 
 from ape_ethereum.ecosystem import (
     BaseEthereumConfig,
@@ -15,7 +15,7 @@ NETWORKS = {
 
 
 class FantomConfig(BaseEthereumConfig):
-    NETWORKS: ClassVar[Dict[str, Tuple[int, int]]] = NETWORKS
+    NETWORKS: ClassVar[dict[str, tuple[int, int]]] = NETWORKS
     opera: NetworkConfig = create_network_config(block_time=0, required_confirmations=0)
     testnet: NetworkConfig = create_network_config(block_time=0, required_confirmations=0)
 
