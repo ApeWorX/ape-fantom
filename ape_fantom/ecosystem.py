@@ -16,7 +16,7 @@ NETWORKS = {
 
 class FantomConfig(BaseEthereumConfig):
     NETWORKS: ClassVar[dict[str, tuple[int, int]]] = NETWORKS
-    opera: NetworkConfig = create_network_config(block_time=0, required_confirmations=0)
+    opera: NetworkConfig = create_network_config(block_time=0, required_confirmations=0, is_mainnet=True)
     testnet: NetworkConfig = create_network_config(block_time=0, required_confirmations=0)
 
 
