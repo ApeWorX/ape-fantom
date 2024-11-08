@@ -35,3 +35,8 @@ def test_encode_transaction(tx_type, fantom, eth_tester_provider):
     address = "0x274b028b03A250cA03644E6c578D81f019eE1323"
     actual = fantom.encode_transaction(address, abi, sender=address, type=tx_type)
     assert actual.gas_limit == eth_tester_provider.max_gas
+
+
+def test_is_mainnet(fantom):
+    assert fantom.opera.is_mainnet
+    assert not fantom.testnet.is_mainnet
