@@ -46,3 +46,30 @@ def providers():
         yield "fantom", network_name, Node
 
     yield "fantom", LOCAL_NETWORK_NAME, LocalProvider
+
+
+def __getattr__(name: str):
+    if name == "NETWORKS":
+        from .ecosystem import NETWORKS
+
+        return NETWORKS
+
+    elif name == "Fantom":
+        from .ecosystem import Fantom
+
+        return Fantom
+
+    elif name == "FantomConfig":
+        from .ecosystem import FantomConfig
+
+        return FantomConfig
+
+    else:
+        raise AttributeError(name)
+
+
+__all__ = [
+    "NETWORKS",
+    "Fantom",
+    "FantomConfig",
+]
