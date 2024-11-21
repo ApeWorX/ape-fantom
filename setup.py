@@ -50,7 +50,7 @@ with open("./README.md") as readme:
 
 
 setup(
-    name="ape_fantom",
+    name="ape-fantom",
     use_scm_version=True,
     setup_requires=["setuptools_scm"],
     description="""ape-fantom: Ape Ecosystem Plugin for Fantom""",
