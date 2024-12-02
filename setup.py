@@ -8,6 +8,7 @@ extras_require = {
         "pytest-xdist",  # Multi-process runner
         "pytest-cov",  # Coverage analyzer plugin
         "hypothesis>=6.2.0,<7",  # Strategy-based fuzzer
+        "ethpm-types",  # Imported in tests
     ],
     "lint": [
         "black>=24.10.0,<25",  # Auto-formatter and linter
@@ -63,7 +64,6 @@ setup(
     include_package_data=True,
     install_requires=[
         "eth-ape>=0.8.18,<0.9",
-        "ethpm-types",  # Use same version as eth-ape
     ],
     python_requires=">=3.9,<4",
     extras_require=extras_require,
