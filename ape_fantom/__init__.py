@@ -54,18 +54,17 @@ def __getattr__(name: str):
 
         return NETWORKS
 
-    elif name == "Fantom":
+    if name == "Fantom":
         from .ecosystem import Fantom
 
         return Fantom
 
-    elif name == "FantomConfig":
+    if name == "FantomConfig":
         from .ecosystem import FantomConfig
 
         return FantomConfig
 
-    else:
-        raise AttributeError(name)
+    raise AttributeError(name)
 
 
 __all__ = [
